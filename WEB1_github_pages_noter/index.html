@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WEB1 – Reeksamen hurtignoter (Sæt 1–12)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="q1-visible">
+  <a class="skip-link" href="#content">Spring til indhold</a>
+
+  <aside class="sidebar" aria-label="Navigation">
+    <div class="brand">
+      <div class="brand-title">WEB1 hurtignoter</div>
+      <div class="brand-sub">Sæt 1–12 • klar til GitHub Pages</div>
+    </div>
+
+    <div class="controls">
+      <label class="sr-only" for="search">Søg i noter</label>
+      <input id="search" type="search" placeholder="Søg… (fx fetch, grid, box-sizing)" autocomplete="off" />
+
+      <div class="toggles">
+        <button id="toggleQ1" class="btn btn-secondary" type="button" aria-pressed="true">
+          Skjul/vis Spg. 1 (projekt)
+        </button>
+        <button id="expandCurrent" class="btn" type="button">
+          Åbn alt i valgt sæt
+        </button>
+      </div>
+    </div>
+
+    <nav class="set-nav" aria-label="Eksamenssæt">
+      <ul id="setList">
+        <li><a href="#set-1" data-set="1">Sæt 1</a></li>
+        <li><a href="#set-2" data-set="2">Sæt 2</a></li>
+        <li><a href="#set-3" data-set="3">Sæt 3</a></li>
+        <li><a href="#set-4" data-set="4">Sæt 4</a></li>
+        <li><a href="#set-5" data-set="5">Sæt 5</a></li>
+        <li><a href="#set-6" data-set="6">Sæt 6</a></li>
+        <li><a href="#set-7" data-set="7">Sæt 7</a></li>
+        <li><a href="#set-8" data-set="8">Sæt 8</a></li>
+        <li><a href="#set-9" data-set="9">Sæt 9</a></li>
+        <li><a href="#set-10" data-set="10">Sæt 10</a></li>
+        <li><a href="#set-11" data-set="11">Sæt 11</a></li>
+        <li><a href="#set-12" data-set="12">Sæt 12</a></li>
+      </ul>
+    </nav>
+
+    <div class="projects">
+      <div class="projects-title">Projekter (hav dem åbne)</div>
+      <ul>
+        <li><a href="https://github.com/MehmetSoftwares/CV-web-projekt" target="_blank" rel="noreferrer">Projekt 1 – CV-web-projekt</a></li>
+        <li><a href="https://github.com/mforbeskr/Monster-Match" target="_blank" rel="noreferrer">Projekt 2 – Monster-Match</a></li>
+        <li><a href="https://github.com/mforbeskr/Browsergame-WhackAJan" target="_blank" rel="noreferrer">Projekt 3 – Browsergame-WhackAJan</a></li>
+      </ul>
+      <div class="hint">
+        Tip: Klik et sæt i venstre side → alt i sættet åbnes, så du kan svare hurtigt.
+      </div>
+    </div>
+  </aside>
+
+  <main id="content" class="content" tabindex="-1">
+    <header class="page-header">
+      <h1>WEB1 – Reeksamen hurtignoter</h1>
+      <p class="meta">
+        Navigér via sidebar • Søg øverst • Brug “Åbn alt i valgt sæt” når du trækker et nummer.
+      </p>
+      <p class="meta small">
+        Spg. 1 (projekt) er genbrugt på tværs: Sæt 1/4/7/10 = Projekt 1, Sæt 2/5/8/11 = Projekt 2, Sæt 3/6/9/12 = Projekt 3.
+      </p>
+    </header>
+
+    <!-- ===================== SET 1 ===================== -->
+    <section id="set-1" class="set" data-set="1">
+      <div class="set-head">
+        <h2>Sæt 1</h2>
+        <div class="mini-toc">
+          <a href="#set-1-q1">Spg. 1</a>
+          <a href="#set-1-q2">Spg. 2</a>
+          <a href="#set-1-q3">Spg. 3</a>
+          <a href="#set-1-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-1-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – Projekt 1: Responsivt design (Flexbox, Grid, media queries)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Projekt 1 er et CV-website bygget responsivt.</li>
+            <li>Overordnet layout laves med <strong>CSS Grid</strong> (2D layout).</li>
+            <li>Komponenter (nav, små sektioner) laves med <strong>Flexbox</strong> (1D layout).</li>
+            <li><strong>Media queries</strong> skifter layout ved breakpoints (kolonner → én kolonne på mobil).</li>
+            <li>Billeder skalerer med <code>max-width: 100%</code> og <code>height: auto</code>.</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Åbn i IDE (hurtigst):</strong> <code>index.html</code> + <code>style.css</code> (eller tilsvarende).
+          </div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempel (CSS)</span>
+              <button class="copy" type="button" data-copy="#code-set1-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set1-q1">/* Grid til side-layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+/* Flexbox til navigation */
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Media query til mobil */
+@media (max-width: 768px) {
+  .container { grid-template-columns: 1fr; }
+  nav ul { flex-direction: column; }
+}
+
+/* Fleksible billeder */
+img { max-width: 100%; height: auto; }</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-1-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – CSS box model og <code>box-sizing: border-box</code></span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Box model: <strong>content</strong> → <strong>padding</strong> → <strong>border</strong> → <strong>margin</strong>.</li>
+            <li>Default <code>content-box</code>: width/height gælder kun content (padding+border lægges oveni).</li>
+            <li><code>border-box</code>: width/height inkluderer padding+border → mere forudsigeligt layout.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempel</span>
+              <button class="copy" type="button" data-copy="#code-set1-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set1-q2">/* Uden border-box (standard content-box) */
+.element {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid;
+}
+/* Total bredde = 200 + 2*20 + 2*5 = 250px */
+
+/* Med border-box */
+* { box-sizing: border-box; }
+.element {
+  width: 200px;      /* inkluderer padding + border */
+  padding: 20px;
+  border: 5px solid;
+}
+/* Total bredde = 200px */</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-1-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – Strategier for bedre webtilgængelighed (accessibility)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Semantisk HTML (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, headings i orden).</li>
+            <li><code>alt</code>-tekster på billeder.</li>
+            <li>Tastatur: tab-rækkefølge, synlig fokus, ingen “keyboard traps”.</li>
+            <li>Kontrast + ikke kun farve som information.</li>
+            <li>Labels på forms + ARIA kun når nødvendigt.</li>
+            <li>Test: Lighthouse + manuel keyboard/zoom.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Mini-eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set1-q3">Kopiér</button>
+            </div>
+            <pre><code id="code-set1-q3">&lt;img src="profil.jpg" alt="Portrætbillede af Mehmet"&gt;
+
+&lt;label for="email"&gt;Email&lt;/label&gt;
+&lt;input id="email" type="email"&gt;
+
+button:focus {
+  outline: 3px solid black;
+}</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-1-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – DOM: hvad er det, og hvordan interagerer JavaScript?</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>DOM er browserens træ-repræsentation af HTML (noder/elementer).</li>
+            <li>JS kan finde elementer, ændre tekst/klasser/styles og reagere på events.</li>
+            <li>Værdifuld demo: selection + event + opdatering af DOM.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Live-demo</span>
+              <button class="copy" type="button" data-copy="#code-set1-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set1-q4">&lt;h1 id="title"&gt;Hej&lt;/h1&gt;
+&lt;button id="btn"&gt;Klik&lt;/button&gt;
+
+&lt;script&gt;
+const title = document.getElementById("title");
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", () =&gt; {
+  title.textContent = "Hej verden!";
+});
+&lt;/script&gt;</code></pre>
+          </div>
+
+          <div class="callout">
+            <strong>Kan demonstreres i:</strong> Projekt 3 (Browsergame) – klik-events, score-opdatering, DOM-manipulation.
+          </div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <!-- ===================== SET 2 ===================== -->
+    <section id="set-2" class="set" data-set="2">
+      <div class="set-head">
+        <h2>Sæt 2</h2>
+        <div class="mini-toc">
+          <a href="#set-2-q1">Spg. 1</a>
+          <a href="#set-2-q2">Spg. 2</a>
+          <a href="#set-2-q3">Spg. 3</a>
+          <a href="#set-2-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-2-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – Projekt 2: Formulardesign, validering og usability</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Formular med logisk gruppering, tydelige labels og forudsigeligt flow.</li>
+            <li>Validering: HTML5 først (<code>required</code>, <code>type</code>, <code>minlength</code>, <code>pattern</code>).</li>
+            <li>JS bruges til ekstra checks + bedre feedback (live validering / custom beskeder).</li>
+            <li>Usability: synlig fokus, klare fejltekster, nem rettelse, mobilvenligt.</li>
+          </ul>
+
+          <div class="callout"><strong>Åbn i IDE:</strong> <code>index.html</code> (form), <code>script.js</code> (validering), <code>style.css</code> (layout/fokus).</div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Validering (JS)</span>
+              <button class="copy" type="button" data-copy="#code-set2-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set2-q1">const email = document.getElementById("email");
+
+email.addEventListener("input", () =&gt; {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("Indtast en gyldig email");
+  } else {
+    email.setCustomValidity("");
+  }
+});</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-2-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – Demonstrér Flexbox layout</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Flexbox = 1D layout (række/kolonne). Container styrer alignment.</li>
+            <li>Typiske props: <code>display:flex</code>, <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>gap</code>.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>HTML + CSS</span>
+              <button class="copy" type="button" data-copy="#code-set2-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set2-q2">&lt;div class="container"&gt;
+  &lt;div class="box"&gt;Boks 1&lt;/div&gt;
+  &lt;div class="box"&gt;Boks 2&lt;/div&gt;
+  &lt;div class="box"&gt;Boks 3&lt;/div&gt;
+&lt;/div&gt;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .container { flex-direction: column; }
+}</code></pre>
+          </div>
+
+          <div class="callout">
+            <strong>Kan demonstreres i:</strong> Projekt 1 (navigation) eller Projekt 2 (form/layout).
+          </div>
+        </div>
+      </details>
+
+      <details id="set-2-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – UI vs UX</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li><strong>UI</strong> = det visuelle: knapper, farver, typografi, layout.</li>
+            <li><strong>UX</strong> = oplevelsen: flow, feedback, effektivitet, frustration vs. tilfredshed.</li>
+            <li>Du kan have flot UI og dårlig UX – og omvendt, men god UX kræver ofte fornuftig UI.</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Eksempel:</strong> UI = “Send”-knappens look. UX = hvad der sker når man trykker (feedback, fejl, bekræftelse).
+          </div>
+        </div>
+      </details>
+
+      <details id="set-2-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – Browser API’er (DOM, Fetch, LocalStorage, …)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Browser API’er giver JS adgang til DOM, netværk, storage, device features osv.</li>
+            <li>Vælg 2–3 API’er og giv mini-demo: DOM, Fetch, LocalStorage (typisk stærkest).</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set2-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set2-q4">// DOM
+document.querySelector("h1").textContent = "Hej";
+
+// Fetch
+fetch("data.json")
+  .then(r =&gt; r.json())
+  .then(data =&gt; console.log(data));
+
+// LocalStorage
+localStorage.setItem("theme", "dark");
+const t = localStorage.getItem("theme");</code></pre>
+          </div>
+
+          <div class="callout">
+            <strong>Kan demonstreres i:</strong> Projekt 3 (localStorage/highscore + DOM), Projekt 2 (DOM + form).
+          </div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <!-- ===================== SET 3 ===================== -->
+    <section id="set-3" class="set" data-set="3">
+      <div class="set-head">
+        <h2>Sæt 3</h2>
+        <div class="mini-toc">
+          <a href="#set-3-q1">Spg. 1</a>
+          <a href="#set-3-q2">Spg. 2</a>
+          <a href="#set-3-q3">Spg. 3</a>
+          <a href="#set-3-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-3-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – Projekt 3: DOM, events og data-persistens</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Spillet opdaterer UI dynamisk via DOM (score, targets, state).</li>
+            <li>Events: klik/keydown + timers (<code>setInterval</code>/<code>setTimeout</code>).</li>
+            <li>Persistens: highscore gemmes i <code>localStorage</code>.</li>
+          </ul>
+
+          <div class="callout"><strong>Åbn i IDE:</strong> <code>script.js</code> (event listeners, score, localStorage).</div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set3-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set3-q1">const scoreEl = document.getElementById("score");
+scoreEl.textContent = points;
+
+gameArea.addEventListener("click", hitTarget);
+
+let best = Number(localStorage.getItem("bestScore")) || 0;
+if (points &gt; best) localStorage.setItem("bestScore", points);</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-3-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – Media queries og breakpoints</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Media query = betinget CSS (fx baseret på width).</li>
+            <li>Breakpoint = punkt hvor layout ændrer sig.</li>
+            <li>Typisk: kolonner → stak på mobil.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempel</span>
+              <button class="copy" type="button" data-copy="#code-set3-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set3-q2">.container { display: flex; flex-direction: row; }
+
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+}</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-3-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – HTML-struktur og semantisk HTML</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Grundstruktur: <code>&lt;head&gt;</code> (meta/links) + <code>&lt;body&gt;</code> (indhold).</li>
+            <li>Semantik: brug <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+            <li>Fordele: accessibility, SEO, vedligeholdelse.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Skeleton</span>
+              <button class="copy" type="button" data-copy="#code-set3-q3">Kopiér</button>
+            </div>
+            <pre><code id="code-set3-q3">&lt;!DOCTYPE html&gt;
+&lt;html lang="da"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Titel&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;main&gt;...&lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-3-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – Fordele/ulemper ved JavaScripts dynamiske typning</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li><strong>Fordele:</strong> hurtigt at skrive, fleksibelt, godt til prototyping.</li>
+            <li><strong>Ulemper:</strong> type-fejl opdages ved runtime, implicit coercion kan give bugs.</li>
+            <li>Best practice: brug <code>===</code>, vær eksplicit, evt. TypeScript i større projekter.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set3-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set3-q4">let x = 42;
+x = "hej";     // tilladt (dynamisk)
+
+"5" + 2;       // "52" (string concat)
+"5" - 2;       // 3 (coercion til number)
+
+0 == false;    // true
+0 === false;   // false</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <!-- SET 4 -->
+    <section id="set-4" class="set" data-set="4">
+      <div class="set-head">
+        <h2>Sæt 4</h2>
+        <div class="mini-toc">
+          <a href="#set-4-q1">Spg. 1</a>
+          <a href="#set-4-q2">Spg. 2</a>
+          <a href="#set-4-q3">Spg. 3</a>
+          <a href="#set-4-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-4-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – (genbrug) Projekt 1: Responsivt design</span></summary>
+        <div class="q-body">
+          <p>Samme som Sæt 1, Spg. 1: Grid til layout, Flexbox til komponenter, media queries til breakpoints.</p>
+        </div>
+      </details>
+
+      <details id="set-4-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – Inline, indlejret og ekstern CSS</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li><strong>Inline</strong>: <code>style=""</code> på elementet (høj specificitet, dårlig vedligehold).</li>
+            <li><strong>Indlejret</strong>: <code>&lt;style&gt;</code> i <code>&lt;head&gt;</code> (kun den side).</li>
+            <li><strong>Ekstern</strong>: <code>&lt;link&gt;</code> til <code>.css</code> fil (standard i projekter).</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set4-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set4-q2">&lt;!-- Inline --&gt;
+&lt;h1 style="color: blue;"&gt;Titel&lt;/h1&gt;
+
+&lt;!-- Indlejret --&gt;
+&lt;style&gt;
+  h1 { color: blue; }
+&lt;/style&gt;
+
+&lt;!-- Ekstern --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-4-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – HTML input-typer og use cases</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Input-typer forbedrer UX (tastatur på mobil) og ofte validering.</li>
+            <li>Gode at nævne: <code>text</code>, <code>email</code>, <code>password</code>, <code>number</code>, <code>date</code>, <code>checkbox</code>, <code>radio</code>, <code>file</code>.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Mini-demo</span>
+              <button class="copy" type="button" data-copy="#code-set4-q3">Kopiér</button>
+            </div>
+            <pre><code id="code-set4-q3">&lt;input type="email" required&gt;
+&lt;input type="number" min="1" max="10"&gt;
+&lt;input type="date"&gt;
+&lt;input type="radio" name="level" value="beginner"&gt;
+&lt;input type="checkbox" required&gt;
+&lt;input type="file"&gt;</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-4-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – JavaScript arrays: tilføj, fjern, iterér</span></summary>
+        <div class="q-body">
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Array-demo</span>
+              <button class="copy" type="button" data-copy="#code-set4-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set4-q4">const arr = ["Æble", "Banan"];
+
+arr.push("Kirsebær");     // tilføj bagest
+arr.pop();                // fjern bagest
+
+arr.unshift("Mango");     // tilføj forrest
+arr.shift();              // fjern forrest
+
+for (const item of arr) {
+  console.log(item);
+}
+
+// Bonus: fjern/indsæt i midten
+arr.splice(1, 1);</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <!-- SET 5 -->
+    <section id="set-5" class="set" data-set="5">
+      <div class="set-head">
+        <h2>Sæt 5</h2>
+        <div class="mini-toc">
+          <a href="#set-5-q1">Spg. 1</a>
+          <a href="#set-5-q2">Spg. 2</a>
+          <a href="#set-5-q3">Spg. 3</a>
+          <a href="#set-5-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-5-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – (genbrug) Projekt 2: Form + validering + usability</span></summary>
+        <div class="q-body"><p>Samme som Sæt 2, Spg. 1.</p></div>
+      </details>
+
+      <details id="set-5-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – Block-level vs inline elementer</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li><strong>Block</strong> starter ny linje og fylder typisk hele bredden (fx <code>div</code>, <code>p</code>).</li>
+            <li><strong>Inline</strong> ligger på samme linje (fx <code>span</code>, <code>a</code>).</li>
+            <li><code>display</code> kan ændre adfærd.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Mini-demo</span>
+              <button class="copy" type="button" data-copy="#code-set5-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set5-q2">&lt;div&gt;Block&lt;/div&gt;&lt;div&gt;Block&lt;/div&gt;
+
+&lt;span&gt;Inline&lt;/span&gt; &lt;span&gt;Inline&lt;/span&gt;
+
+span { display: block; }</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-5-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – CSS-selektorer (ramme elementer)</span></summary>
+        <div class="q-body">
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Typiske selektorer</span>
+              <button class="copy" type="button" data-copy="#code-set5-q3">Kopiér</button>
+            </div>
+            <pre><code id="code-set5-q3">p { color: black; }              /* element */
+.card { border: 1px solid; }     /* class */
+#header { background: gray; }    /* id */
+nav a { text-decoration: none; } /* descendant */
+button:hover { opacity: 0.9; }   /* pseudo-class */
+input[type="email"] { border-color: red; } /* attribute */</code></pre>
+          </div>
+
+          <div class="callout"><strong>Best practice:</strong> brug classes til styling, undgå IDs hvis du ofte skal override.</div>
+        </div>
+      </details>
+
+      <details id="set-5-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – Event handling i JavaScript</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Events = bruger/system-hændelser, håndteres med <code>addEventListener</code>.</li>
+            <li>Callback køres når event sker.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Demo</span>
+              <button class="copy" type="button" data-copy="#code-set5-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set5-q4">&lt;button id="btn"&gt;Klik mig&lt;/button&gt;
+
+&lt;script&gt;
+const btn = document.getElementById("btn");
+btn.addEventListener("click", () =&gt; {
+  console.log("Der blev klikket");
+});
+&lt;/script&gt;</code></pre>
+          </div>
+
+          <div class="callout"><strong>Kan demonstreres i:</strong> Projekt 3 (klik på targets), Projekt 2 (input/submit events).</div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <!-- SET 6 -->
+    <section id="set-6" class="set" data-set="6">
+      <div class="set-head">
+        <h2>Sæt 6</h2>
+        <div class="mini-toc">
+          <a href="#set-6-q1">Spg. 1</a>
+          <a href="#set-6-q2">Spg. 2</a>
+          <a href="#set-6-q3">Spg. 3</a>
+          <a href="#set-6-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-6-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – (genbrug) Projekt 3: DOM + events + persistens</span></summary>
+        <div class="q-body"><p>Samme som Sæt 3, Spg. 1.</p></div>
+      </details>
+
+      <details id="set-6-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – Default flow layout vs Flexbox og Grid</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Default flow: elementer placeres efter hinanden (block → ny linje, inline → samme linje).</li>
+            <li>Flexbox: kontrolleret 1D layout.</li>
+            <li>Grid: kontrolleret 2D layout.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Mini-demo</span>
+              <button class="copy" type="button" data-copy="#code-set6-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set6-q2">/* Default flow (ingen CSS) */
+p {}
+
+/* Flexbox */
+.container { display: flex; }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: 1fr 1fr; }</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-6-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – Wireframing og prototyping (formål)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Wireframe: tidlig skitse af struktur og layout (lav detaljegrad).</li>
+            <li>Prototype: mere realistisk og ofte klikbar (test af flow).</li>
+            <li>Fordel: find fejl tidligt → billigere end at rette i kode.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details id="set-6-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – JSON: struktur + serialize/deserialize</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>JSON er et dataformat (tekst) til udveksling.</li>
+            <li>JS bruger <code>JSON.stringify</code> og <code>JSON.parse</code>.</li>
+            <li>JSON kan ikke indeholde funktioner – kun data.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempel</span>
+              <button class="copy" type="button" data-copy="#code-set6-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set6-q4">const obj = { score: 10 };
+const json = JSON.stringify(obj);   // serialize (obj -&gt; string)
+
+const data = JSON.parse(json);      // deserialize (string -&gt; obj)</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <!-- SET 7 -->
+    <section id="set-7" class="set" data-set="7">
+      <div class="set-head">
+        <h2>Sæt 7</h2>
+        <div class="mini-toc">
+          <a href="#set-7-q1">Spg. 1</a>
+          <a href="#set-7-q2">Spg. 2</a>
+          <a href="#set-7-q3">Spg. 3</a>
+          <a href="#set-7-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-7-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – (genbrug) Projekt 1: Responsivt design</span></summary>
+        <div class="q-body"><p>Samme som Sæt 1, Spg. 1.</p></div>
+      </details>
+
+      <details id="set-7-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – CSS pseudo-classes (formål)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Pseudo-classes beskriver tilstande (interaktion/struktur), fx <code>:hover</code>, <code>:focus</code>, <code>:checked</code>.</li>
+            <li>Bruges til feedback (UX) og fokus (accessibility).</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set7-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set7-q2">button:hover { opacity: 0.9; }
+input:focus { outline: 2px solid black; }
+input:disabled { opacity: 0.5; }
+input:checked + label { font-weight: bold; }</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-7-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – Demonstrér input-validering i HTML</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>HTML5 validering med <code>required</code>, input-typer, <code>min/max</code>, <code>pattern</code>.</li>
+            <li>Browseren viser automatisk fejl ved submit.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Mini-form</span>
+              <button class="copy" type="button" data-copy="#code-set7-q3">Kopiér</button>
+            </div>
+            <pre><code id="code-set7-q3">&lt;form&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input type="email" required&gt;
+
+  &lt;label&gt;Alder&lt;/label&gt;
+  &lt;input type="number" min="18" max="99"&gt;
+
+  &lt;button&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          </div>
+
+          <div class="callout"><strong>Kan demonstreres i:</strong> Projekt 2 (form + validering).</div>
+        </div>
+      </details>
+
+      <details id="set-7-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – Fejlhåndtering ved fetch</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Fetch kaster typisk kun fejl ved netværksfejl – ikke automatisk ved 404/500.</li>
+            <li>Derfor: tjek <code>response.ok</code> og kast fejl selv.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Robust fetch</span>
+              <button class="copy" type="button" data-copy="#code-set7-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set7-q4">fetch("data.json")
+  .then(response =&gt; {
+    if (!response.ok) throw new Error("HTTP-fejl");
+    return response.json();
+  })
+  .then(data =&gt; console.log(data))
+  .catch(err =&gt; console.error("Noget gik galt:", err));</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <!-- SET 8 -->
+    <section id="set-8" class="set" data-set="8">
+      <div class="set-head">
+        <h2>Sæt 8</h2>
+        <div class="mini-toc">
+          <a href="#set-8-q1">Spg. 1</a>
+          <a href="#set-8-q2">Spg. 2</a>
+          <a href="#set-8-q3">Spg. 3</a>
+          <a href="#set-8-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-8-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – (genbrug) Projekt 2: Form + validering + usability</span></summary>
+        <div class="q-body"><p>Samme som Sæt 2, Spg. 1.</p></div>
+      </details>
+
+      <details id="set-8-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – Specificitet + cascade (hvilken CSS regel vinder?)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Hvis flere regler rammer samme element: specificitet → kildeorden → <code>!important</code>.</li>
+            <li>Rækkefølge: inline &gt; ID &gt; class/pseudo/attr &gt; element.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempel</span>
+              <button class="copy" type="button" data-copy="#code-set8-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set8-q2">p { color: red; }
+.text { color: blue; }
+#main p { color: green; }  /* vinder pga. ID */</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-8-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – Demonstrér Grid layout</span></summary>
+        <div class="q-body">
+          <div class="codeblock">
+            <div class="codebar">
+              <span>HTML + CSS</span>
+              <button class="copy" type="button" data-copy="#code-set8-q3">Kopiér</button>
+            </div>
+            <pre><code id="code-set8-q3">&lt;div class="grid"&gt;
+  &lt;div&gt;Header&lt;/div&gt;
+  &lt;div&gt;Sidebar&lt;/div&gt;
+  &lt;div&gt;Content&lt;/div&gt;
+&lt;/div&gt;
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+}</code></pre>
+          </div>
+
+          <div class="callout"><strong>Kan demonstreres i:</strong> Projekt 1 (layout med Grid).</div>
+        </div>
+      </details>
+
+      <details id="set-8-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – Function declarations vs function expressions</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Declaration hoistes (kan bruges før den er defineret).</li>
+            <li>Expression er en værdi (ikke hoistet på samme måde).</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set8-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set8-q4">// Declaration
+function greet() {
+  console.log("Hej");
+}
+
+// Expression
+const greet2 = function () {
+  console.log("Hej");
+};
+
+// Expression (arrow) - typisk i callbacks:
+button.addEventListener("click", () =&gt; console.log("klik"));</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <!-- SET 9 -->
+    <section id="set-9" class="set" data-set="9">
+      <div class="set-head">
+        <h2>Sæt 9</h2>
+        <div class="mini-toc">
+          <a href="#set-9-q1">Spg. 1</a>
+          <a href="#set-9-q2">Spg. 2</a>
+          <a href="#set-9-q3">Spg. 3</a>
+          <a href="#set-9-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-9-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – (genbrug) Projekt 3: DOM + events + persistens</span></summary>
+        <div class="q-body"><p>Samme som Sæt 3, Spg. 1.</p></div>
+      </details>
+
+      <details id="set-9-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – “Responsive Web Design” (begrebet)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Samme website fungerer på mobil/tablet/desktop uden separate mobil-sider.</li>
+            <li>3 byggesten: fleksible layouts (Flex/Grid), media queries, fleksible billeder.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Fleksible billeder</span>
+              <button class="copy" type="button" data-copy="#code-set9-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set9-q2">img { max-width: 100%; height: auto; }</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-9-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – Hvad er en HTML form? (struktur)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Form sender data fra bruger til server via <code>action</code> + <code>method</code>.</li>
+            <li>Input-nøgler styres af <code>name</code>-attributten.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Mini-form</span>
+              <button class="copy" type="button" data-copy="#code-set9-q3">Kopiér</button>
+            </div>
+            <pre><code id="code-set9-q3">&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Navn&lt;/label&gt;
+  &lt;input id="name" name="name" type="text"&gt;
+
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-9-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – Fetch API: send og modtag data</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Fetch returnerer en Promise og bruges til HTTP-kald uden reload.</li>
+            <li>GET: hent data, POST: send JSON med headers + body.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>GET + POST</span>
+              <button class="copy" type="button" data-copy="#code-set9-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set9-q4">// GET
+fetch("data.json")
+  .then(r =&gt; r.json())
+  .then(data =&gt; console.log(data));
+
+// POST (JSON)
+fetch("/api", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ score: 10 })
+});</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <!-- SET 10 -->
+    <section id="set-10" class="set" data-set="10">
+      <div class="set-head">
+        <h2>Sæt 10</h2>
+        <div class="mini-toc">
+          <a href="#set-10-q1">Spg. 1</a>
+          <a href="#set-10-q2">Spg. 2</a>
+          <a href="#set-10-q3">Spg. 3</a>
+          <a href="#set-10-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-10-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – (genbrug) Projekt 1: Responsivt design</span></summary>
+        <div class="q-body"><p>Samme som Sæt 1, Spg. 1.</p></div>
+      </details>
+
+      <details id="set-10-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – Hyperlinks: URLs og relativ vs absolut path</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Links laves med <code>&lt;a href=""&gt;</code>.</li>
+            <li><strong>Absolut</strong>: fuld URL (eksterne sider). <strong>Relativ</strong>: internt i projektet (flytbart).</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set10-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set10-q2">&lt;a href="https://example.com"&gt;Eksternt link&lt;/a&gt;
+
+&lt;a href="about.html"&gt;Relativ (samme mappe)&lt;/a&gt;
+&lt;a href="../images/pic.jpg"&gt;Relativ (op én mappe)&lt;/a&gt;</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-10-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – Farver i CSS</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Formater: navne, hex, rgb/rgba, hsl.</li>
+            <li>RGBA er stærk når du vil have transparens.</li>
+            <li>Nævn kontrast (accessibility).</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set10-q3">Kopiér</button>
+            </div>
+            <pre><code id="code-set10-q3">color: red;
+color: #ff0000;
+color: rgb(255, 0, 0);
+color: rgba(255, 0, 0, 0.5);
+color: hsl(0, 100%, 50%);</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-10-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – setTimeout og setInterval</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li><code>setTimeout</code> kører én gang efter delay.</li>
+            <li><code>setInterval</code> kører gentagne gange indtil <code>clearInterval</code>.</li>
+            <li>Vigtigt at kunne stoppe interval.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Demo</span>
+              <button class="copy" type="button" data-copy="#code-set10-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set10-q4">setTimeout(() =&gt; {
+  console.log("Kører én gang");
+}, 1000);
+
+const id = setInterval(() =&gt; {
+  console.log("Kører igen og igen");
+}, 1000);
+
+clearInterval(id);</code></pre>
+          </div>
+
+          <div class="callout"><strong>Kan demonstreres i:</strong> Projekt 3 (spil-loop/timers).</div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <!-- SET 11 -->
+    <section id="set-11" class="set" data-set="11">
+      <div class="set-head">
+        <h2>Sæt 11</h2>
+        <div class="mini-toc">
+          <a href="#set-11-q1">Spg. 1</a>
+          <a href="#set-11-q2">Spg. 2</a>
+          <a href="#set-11-q3">Spg. 3</a>
+          <a href="#set-11-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-11-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – (genbrug) Projekt 2: Form + validering + usability</span></summary>
+        <div class="q-body"><p>Samme som Sæt 2, Spg. 1.</p></div>
+      </details>
+
+      <details id="set-11-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – Absolutte og relative sizing units (CSS)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li><strong>Absolutte:</strong> <code>px</code>, <code>cm</code> (faste).</li>
+            <li><strong>Relative:</strong> <code>em</code>, <code>rem</code>, <code>%</code>, <code>vw</code>, <code>vh</code> (bedre til responsive + accessibility).</li>
+            <li><code>rem</code> er relativ til root (typisk bedst til typografi).</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempel</span>
+              <button class="copy" type="button" data-copy="#code-set11-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set11-q2">body { font-size: 16px; }
+h1 { font-size: 2rem; } /* 32px */
+.card { width: 80%; }
+.hero { height: 50vh; }</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-11-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – Hvordan form submissions fungerer</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Submit sender data baseret på <code>name</code>.</li>
+            <li><code>action</code> = destination, <code>method</code> = GET/POST.</li>
+            <li>JS kan stoppe reload med <code>preventDefault()</code>.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>HTML + JS</span>
+              <button class="copy" type="button" data-copy="#code-set11-q3">Kopiér</button>
+            </div>
+            <pre><code id="code-set11-q3">&lt;form id="f" action="/submit" method="post"&gt;
+  &lt;input name="email" type="email"&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+const form = document.getElementById("f");
+form.addEventListener("submit", (e) =&gt; {
+  e.preventDefault(); // stop reload
+  // her kan du sende med fetch
+});
+&lt;/script&gt;</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-11-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – JavaScript objekter vs JSON</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Objekt = i kode, kan have funktioner.</li>
+            <li>JSON = tekstformat til data, ingen funktioner.</li>
+            <li>Konvertering: <code>JSON.stringify</code>/<code>JSON.parse</code>.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set11-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set11-q4">const player = {
+  name: "Mehmet",
+  score: 10,
+  play() { console.log("playing"); }
+};
+
+// JSON (data only)
+const json = JSON.stringify({ name: "Mehmet", score: 10 });
+const obj = JSON.parse(json);</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <!-- SET 12 -->
+    <section id="set-12" class="set" data-set="12">
+      <div class="set-head">
+        <h2>Sæt 12</h2>
+        <div class="mini-toc">
+          <a href="#set-12-q1">Spg. 1</a>
+          <a href="#set-12-q2">Spg. 2</a>
+          <a href="#set-12-q3">Spg. 3</a>
+          <a href="#set-12-q4">Spg. 4</a>
+        </div>
+      </div>
+
+      <details id="set-12-q1" class="q q1" open>
+        <summary><span>Spørgsmål 1 – (genbrug) Projekt 3: DOM + events + persistens</span></summary>
+        <div class="q-body"><p>Samme som Sæt 3, Spg. 1.</p></div>
+      </details>
+
+      <details id="set-12-q2" class="q" open>
+        <summary><span>Spørgsmål 2 – CSS arv (inheritance)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Nogle properties arver (typisk tekst): <code>color</code>, <code>font-family</code>, <code>line-height</code>.</li>
+            <li>Andre arver ikke: <code>margin</code>, <code>padding</code>, <code>border</code>, <code>width/height</code>, <code>background</code>.</li>
+            <li>Styr med: <code>inherit</code>, <code>initial</code>, <code>unset</code>.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempel</span>
+              <button class="copy" type="button" data-copy="#code-set12-q2">Kopiér</button>
+            </div>
+            <pre><code id="code-set12-q2">body { font-family: Arial; color: #333; }
+.box { color: green; }
+.box a { color: inherit; } /* tving link til at arve */</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-12-q3" class="q" open>
+        <summary><span>Spørgsmål 3 – Accessibility audit + fortolkning</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Kør Lighthouse (Accessibility) + manuel test (tab, fokus, kontrast, zoom).</li>
+            <li>Fix typiske issues: alt-tekst, labels, heading-order, lang-attribut, kontrast.</li>
+            <li>Kør igen og vis forbedring.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Mini-fixes</span>
+              <button class="copy" type="button" data-copy="#code-set12-q3">Kopiér</button>
+            </div>
+            <pre><code id="code-set12-q3">&lt;html lang="da"&gt;
+
+&lt;label for="pwd"&gt;Password&lt;/label&gt;
+&lt;input id="pwd" type="password" required&gt;
+
+&lt;img src="x.jpg" alt="Beskrivende tekst"&gt;</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <details id="set-12-q4" class="q" open>
+        <summary><span>Spørgsmål 4 – JS datatyper + type coercion</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Primitives: string, number, boolean, null, undefined, symbol, bigint. + objects.</li>
+            <li>Coercion: <code>+</code> kan konkatenerer, andre operatorer coerces ofte til number.</li>
+            <li>Brug <code>===</code> for at undgå implicitte overraskelser.</li>
+          </ul>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set12-q4">Kopiér</button>
+            </div>
+            <pre><code id="code-set12-q4">"5" + 2;     // "52"
+"5" - 2;     // 3
+
+0 == false;  // true
+0 === false; // false
+
+const n = Number("42");</code></pre>
+          </div>
+        </div>
+      </details>
+
+      <a class="to-top" href="#content">↑ Til toppen</a>
+    </section>
+
+    <footer class="footer">
+      <p>Bygget som statisk site til GitHub Pages. Du kan redigere teksten direkte i <code>index.html</code>.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
