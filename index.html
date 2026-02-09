@@ -327,34 +327,73 @@ email.addEventListener("input", () =&gt; {
 
       <details id="set-2-q4" class="q" open>
         <summary><span>Spørgsmål 4 – Browser API’er (DOM, Fetch, LocalStorage, …)</span></summary>
-        <div class="q-body">
-          <ul class="bullets">
-            <li>Browser API’er giver JS adgang til DOM, netværk, storage osv.</li>
-            <li>Vælg 2–3 API’er og giv mini-demo: DOM, Fetch, LocalStorage (stærk combo).</li>
-          </ul>
+<div class="q-body">
+  <h3>Hvad siger jeg højt (ca. 45–60 sek.)</h3>
+  <ul class="bullets">
+    <li><strong>Browser-API’er</strong> er funktioner browseren giver til JavaScript, så jeg kan bruge browserens capabilities.</li>
+    <li>Det er ikke “ren JavaScript-sproget” – det er <strong>web platformen</strong> (browseren) der giver API’erne.</li>
+    <li>De bruges typisk til <strong>UI/DOM</strong>, <strong>netværk/data</strong> og <strong>persistens</strong> (gemme data lokalt).</li>
+    <li>Jeg vælger 3 konkrete og viser mini-demo: <strong>DOM API</strong>, <strong>Fetch API</strong>, <strong>Web Storage (localStorage)</strong>.</li>
+  </ul>
 
-          <div class="codeblock">
-            <div class="codebar">
-              <span>Eksempler</span>
-              <button class="copy" type="button" data-copy="#code-set2-q4">Kopiér</button>
-            </div>
-            <pre><code id="code-set2-q4">// DOM
-document.querySelector("h1").textContent = "Hej";
+  <h3>1) DOM API (UI + interaktion)</h3>
+  <ul class="bullets">
+    <li>DOM API bruges til at <strong>finde elementer</strong>, <strong>ændre tekst/klasser</strong> og <strong>reagere på events</strong>.</li>
+    <li>Det er sådan jeg bygger dynamisk UI: score, knapper, vis/skjul osv.</li>
+  </ul>
 
-// Fetch
-fetch("data.json")
-  .then(r =&gt; r.json())
-  .then(data =&gt; console.log(data));
+  <h3>2) Fetch API (netværk/data)</h3>
+  <ul class="bullets">
+    <li>Fetch API bruges til at <strong>hente/sende data</strong> (typisk JSON) uden at reloade siden.</li>
+    <li>Vigtigt: man bør tjekke <code>response.ok</code> og håndtere fejl.</li>
+  </ul>
 
-// LocalStorage
-localStorage.setItem("theme", "dark");
-const t = localStorage.getItem("theme");</code></pre>
-          </div>
+  <h3>3) localStorage (persistens)</h3>
+  <ul class="bullets">
+    <li><code>localStorage</code> er en simpel key/value database i browseren.</li>
+    <li>Bruges fx til <strong>highscore</strong>, settings (theme), sidste valg osv.</li>
+  </ul>
 
-          <div class="callout">
-            <strong>Kan demonstreres i:</strong> Projekt 3 (localStorage/highscore + DOM), Projekt 2 (DOM + form).
-          </div>
-        </div>
+  <div class="codeblock">
+    <div class="codebar">
+      <span>Mini-demo (DOM + Fetch + localStorage)</span>
+      <button class="copy" type="button" data-copy="#code-set2-q4">Kopiér</button>
+    </div>
+    <pre><code id="code-set2-q4">// 1) DOM: find + opdater UI
+const title = document.querySelector("h1");
+title.textContent = "Hej";
+
+// Event (DOM API)
+document.querySelector("#btn")?.addEventListener("click", () => {
+  title.classList.toggle("active");
+});
+
+// 2) Fetch: hent data (JSON)
+async function loadData(){
+  const res = await fetch("data.json");
+  if (!res.ok) throw new Error("HTTP fejl: " + res.status);
+  const data = await res.json();
+  console.log("Data:", data);
+}
+
+// 3) localStorage: gem og hent
+localStorage.setItem("bestScore", "42");
+const best = localStorage.getItem("bestScore");</code></pre>
+  </div>
+
+  <div class="callout">
+    <strong>Hvor kan jeg demonstrere det i mine projekter?</strong><br>
+    • <strong>Projekt 3</strong>: DOM + events + localStorage (highscore/score/UI).<br>
+    • <strong>Projekt 2</strong>: DOM + formular-events/validering (input/submit).<br>
+    • <strong>Fetch</strong>: hvis ikke brugt i projektet, kan du stadig vise mini-demo med en lokal <code>data.json</code>.
+  </div>
+
+  <h3>En stærk afslutning (1 sætning)</h3>
+  <ul class="bullets">
+    <li>“Kort sagt: DOM styrer UI, Fetch henter/sender data, og localStorage gemmer state – det er tre kerne-API’er i browseren.”</li>
+  </ul>
+</div>
+
       </details>
 
       <a class="to-top" href="#content">↑ Til toppen</a>
