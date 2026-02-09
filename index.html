@@ -12,7 +12,7 @@
   <aside class="sidebar" aria-label="Navigation">
     <div class="brand">
       <div class="brand-title">WEB1 hurtignoter</div>
-      <div class="brand-sub">Sæt 1–12 • klar til GitHub Pages</div>
+      <div class="brand-sub">Sæt 1–12 • hurtig navigation</div>
     </div>
 
     <div class="controls">
@@ -20,9 +20,15 @@
       <input id="search" type="search" placeholder="Søg… (fx fetch, grid, box-sizing)" autocomplete="off" />
 
       <div class="toggles">
+        <div class="font-controls" role="group" aria-label="Tekststørrelse">
+          <button id="fontDown" class="btn btn-secondary" type="button">A-</button>
+          <button id="fontUp" class="btn btn-secondary" type="button">A+</button>
+        </div>
+
         <button id="toggleQ1" class="btn btn-secondary" type="button" aria-pressed="true">
           Skjul/vis Spg. 1 (projekt)
         </button>
+
         <button id="expandCurrent" class="btn" type="button">
           Åbn alt i valgt sæt
         </button>
@@ -54,7 +60,7 @@
         <li><a href="https://github.com/mforbeskr/Browsergame-WhackAJan" target="_blank" rel="noreferrer">Projekt 3 – Browsergame-WhackAJan</a></li>
       </ul>
       <div class="hint">
-        Tip: Klik et sæt i venstre side → alt i sættet åbnes, så du kan svare hurtigt.
+        Tip: Klik et sæt → hele sættet åbnes, så du kan svare uden at lede.
       </div>
     </div>
   </aside>
@@ -63,12 +69,15 @@
     <header class="page-header">
       <h1>WEB1 – Reeksamen hurtignoter</h1>
       <p class="meta">
-        Navigér via sidebar • Søg øverst • Brug “Åbn alt i valgt sæt” når du trækker et nummer.
+        Klik et sæt i venstre side → alt i sættet åbnes automatisk. Brug søgning øverst.
       </p>
       <p class="meta small">
-        Spg. 1 (projekt) er genbrugt på tværs: Sæt 1/4/7/10 = Projekt 1, Sæt 2/5/8/11 = Projekt 2, Sæt 3/6/9/12 = Projekt 3.
+        Spg. 1 (7-min projekt): Sæt 1/4/7/10 = Projekt 1 • Sæt 2/5/8/11 = Projekt 2 • Sæt 3/6/9/12 = Projekt 3.
       </p>
     </header>
+
+    <!-- ============== Reusable blocks (copied into multiple sets) ============== -->
+    <!-- NOTE: Indeholder ikke templates i runtime; teksten er fysisk gentaget pr. sæt for hurtig eksamennavigation. -->
 
     <!-- ===================== SET 1 ===================== -->
     <section id="set-1" class="set" data-set="1">
@@ -90,11 +99,11 @@
             <li>Overordnet layout laves med <strong>CSS Grid</strong> (2D layout).</li>
             <li>Komponenter (nav, små sektioner) laves med <strong>Flexbox</strong> (1D layout).</li>
             <li><strong>Media queries</strong> skifter layout ved breakpoints (kolonner → én kolonne på mobil).</li>
-            <li>Billeder skalerer med <code>max-width: 100%</code> og <code>height: auto</code>.</li>
+            <li>Ingen horisontal scrolling på mobil.</li>
           </ul>
 
           <div class="callout">
-            <strong>Åbn i IDE (hurtigst):</strong> <code>index.html</code> + <code>style.css</code> (eller tilsvarende).
+            <strong>Åbn og vis i projektet:</strong> <code>index.html</code> + <code>style.css</code> (eller tilsvarende) → peg på Grid/Flex og breakpoint.
           </div>
 
           <div class="codeblock">
@@ -196,7 +205,7 @@ button:focus {
           <ul class="bullets">
             <li>DOM er browserens træ-repræsentation af HTML (noder/elementer).</li>
             <li>JS kan finde elementer, ændre tekst/klasser/styles og reagere på events.</li>
-            <li>Værdifuld demo: selection + event + opdatering af DOM.</li>
+            <li>Demo: selection + event + opdatering af DOM.</li>
           </ul>
 
           <div class="codeblock">
@@ -244,11 +253,11 @@ btn.addEventListener("click", () =&gt; {
           <ul class="bullets">
             <li>Formular med logisk gruppering, tydelige labels og forudsigeligt flow.</li>
             <li>Validering: HTML5 først (<code>required</code>, <code>type</code>, <code>minlength</code>, <code>pattern</code>).</li>
-            <li>JS bruges til ekstra checks + bedre feedback (live validering / custom beskeder).</li>
-            <li>Usability: synlig fokus, klare fejltekster, nem rettelse, mobilvenligt.</li>
+            <li>JS til ekstra kontrol + bedre feedback (live validering / custom beskeder).</li>
+            <li>Usability: synlig fokus, klare fejltekster, mobilvenligt, nem rettelse.</li>
           </ul>
 
-          <div class="callout"><strong>Åbn i IDE:</strong> <code>index.html</code> (form), <code>script.js</code> (validering), <code>style.css</code> (layout/fokus).</div>
+          <div class="callout"><strong>Åbn og vis i projektet:</strong> <code>index.html</code> (form), <code>script.js</code> (validering), <code>style.css</code> (layout/fokus).</div>
 
           <div class="codeblock">
             <div class="codebar">
@@ -311,12 +320,8 @@ email.addEventListener("input", () =&gt; {
           <ul class="bullets">
             <li><strong>UI</strong> = det visuelle: knapper, farver, typografi, layout.</li>
             <li><strong>UX</strong> = oplevelsen: flow, feedback, effektivitet, frustration vs. tilfredshed.</li>
-            <li>Du kan have flot UI og dårlig UX – og omvendt, men god UX kræver ofte fornuftig UI.</li>
+            <li>Eksempel: UI = knappens look, UX = hvad der sker ved klik (fejl/succes/feedback).</li>
           </ul>
-
-          <div class="callout">
-            <strong>Eksempel:</strong> UI = “Send”-knappens look. UX = hvad der sker når man trykker (feedback, fejl, bekræftelse).
-          </div>
         </div>
       </details>
 
@@ -324,8 +329,8 @@ email.addEventListener("input", () =&gt; {
         <summary><span>Spørgsmål 4 – Browser API’er (DOM, Fetch, LocalStorage, …)</span></summary>
         <div class="q-body">
           <ul class="bullets">
-            <li>Browser API’er giver JS adgang til DOM, netværk, storage, device features osv.</li>
-            <li>Vælg 2–3 API’er og giv mini-demo: DOM, Fetch, LocalStorage (typisk stærkest).</li>
+            <li>Browser API’er giver JS adgang til DOM, netværk, storage osv.</li>
+            <li>Vælg 2–3 API’er og giv mini-demo: DOM, Fetch, LocalStorage (stærk combo).</li>
           </ul>
 
           <div class="codeblock">
@@ -376,7 +381,7 @@ const t = localStorage.getItem("theme");</code></pre>
             <li>Persistens: highscore gemmes i <code>localStorage</code>.</li>
           </ul>
 
-          <div class="callout"><strong>Åbn i IDE:</strong> <code>script.js</code> (event listeners, score, localStorage).</div>
+          <div class="callout"><strong>Åbn og vis i projektet:</strong> <code>script.js</code> (event listeners, score, localStorage).</div>
 
           <div class="codeblock">
             <div class="codebar">
@@ -477,7 +482,7 @@ x = "hej";     // tilladt (dynamisk)
       <a class="to-top" href="#content">↑ Til toppen</a>
     </section>
 
-    <!-- SET 4 -->
+    <!-- ===================== SET 4 ===================== -->
     <section id="set-4" class="set" data-set="4">
       <div class="set-head">
         <h2>Sæt 4</h2>
@@ -489,10 +494,49 @@ x = "hej";     // tilladt (dynamisk)
         </div>
       </div>
 
+      <!-- Q1 (Projekt 1) -->
       <details id="set-4-q1" class="q q1" open>
-        <summary><span>Spørgsmål 1 – (genbrug) Projekt 1: Responsivt design</span></summary>
+        <summary><span>Spørgsmål 1 – Projekt 1: Responsivt design (Flexbox, Grid, media queries)</span></summary>
         <div class="q-body">
-          <p>Samme som Sæt 1, Spg. 1: Grid til layout, Flexbox til komponenter, media queries til breakpoints.</p>
+          <ul class="bullets">
+            <li>Projekt 1 er et CV-website bygget responsivt.</li>
+            <li>Overordnet layout laves med <strong>CSS Grid</strong> (2D layout).</li>
+            <li>Komponenter (nav, små sektioner) laves med <strong>Flexbox</strong> (1D layout).</li>
+            <li><strong>Media queries</strong> skifter layout ved breakpoints (kolonner → én kolonne på mobil).</li>
+            <li>Ingen horisontal scrolling på mobil.</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Åbn og vis i projektet:</strong> <code>index.html</code> + <code>style.css</code> (eller tilsvarende) → peg på Grid/Flex og breakpoint.
+          </div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempel (CSS)</span>
+              <button class="copy" type="button" data-copy="#code-set4-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set4-q1">/* Grid til side-layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+/* Flexbox til navigation */
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Media query til mobil */
+@media (max-width: 768px) {
+  .container { grid-template-columns: 1fr; }
+  nav ul { flex-direction: column; }
+}
+
+/* Fleksible billeder */
+img { max-width: 100%; height: auto; }</code></pre>
+          </div>
         </div>
       </details>
 
@@ -576,7 +620,7 @@ arr.splice(1, 1);</code></pre>
       <a class="to-top" href="#content">↑ Til toppen</a>
     </section>
 
-    <!-- SET 5 -->
+    <!-- ===================== SET 5 ===================== -->
     <section id="set-5" class="set" data-set="5">
       <div class="set-head">
         <h2>Sæt 5</h2>
@@ -588,9 +632,35 @@ arr.splice(1, 1);</code></pre>
         </div>
       </div>
 
+      <!-- Q1 (Projekt 2) -->
       <details id="set-5-q1" class="q q1" open>
-        <summary><span>Spørgsmål 1 – (genbrug) Projekt 2: Form + validering + usability</span></summary>
-        <div class="q-body"><p>Samme som Sæt 2, Spg. 1.</p></div>
+        <summary><span>Spørgsmål 1 – Projekt 2: Formulardesign, validering og usability</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Formular med logisk gruppering, tydelige labels og forudsigeligt flow.</li>
+            <li>Validering: HTML5 først (<code>required</code>, <code>type</code>, <code>minlength</code>, <code>pattern</code>).</li>
+            <li>JS til ekstra kontrol + bedre feedback (live validering / custom beskeder).</li>
+            <li>Usability: synlig fokus, klare fejltekster, mobilvenligt, nem rettelse.</li>
+          </ul>
+
+          <div class="callout"><strong>Åbn og vis i projektet:</strong> <code>index.html</code> (form), <code>script.js</code> (validering), <code>style.css</code> (layout/fokus).</div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Validering (JS)</span>
+              <button class="copy" type="button" data-copy="#code-set5-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set5-q1">const email = document.getElementById("email");
+
+email.addEventListener("input", () =&gt; {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("Indtast en gyldig email");
+  } else {
+    email.setCustomValidity("");
+  }
+});</code></pre>
+          </div>
+        </div>
       </details>
 
       <details id="set-5-q2" class="q" open>
@@ -640,8 +710,8 @@ input[type="email"] { border-color: red; } /* attribute */</code></pre>
         <summary><span>Spørgsmål 4 – Event handling i JavaScript</span></summary>
         <div class="q-body">
           <ul class="bullets">
-            <li>Events = bruger/system-hændelser, håndteres med <code>addEventListener</code>.</li>
-            <li>Callback køres når event sker.</li>
+            <li>Events = hændelser (klik, submit, input, keydown).</li>
+            <li>Håndteres med <code>addEventListener</code> (flere listeners muligt).</li>
           </ul>
 
           <div class="codeblock">
@@ -659,14 +729,14 @@ btn.addEventListener("click", () =&gt; {
 &lt;/script&gt;</code></pre>
           </div>
 
-          <div class="callout"><strong>Kan demonstreres i:</strong> Projekt 3 (klik på targets), Projekt 2 (input/submit events).</div>
+          <div class="callout"><strong>Kan demonstreres i:</strong> Projekt 3 (klik på targets) eller Projekt 2 (input/submit events).</div>
         </div>
       </details>
 
       <a class="to-top" href="#content">↑ Til toppen</a>
     </section>
 
-    <!-- SET 6 -->
+    <!-- ===================== SET 6 ===================== -->
     <section id="set-6" class="set" data-set="6">
       <div class="set-head">
         <h2>Sæt 6</h2>
@@ -678,9 +748,32 @@ btn.addEventListener("click", () =&gt; {
         </div>
       </div>
 
+      <!-- Q1 (Projekt 3) -->
       <details id="set-6-q1" class="q q1" open>
-        <summary><span>Spørgsmål 1 – (genbrug) Projekt 3: DOM + events + persistens</span></summary>
-        <div class="q-body"><p>Samme som Sæt 3, Spg. 1.</p></div>
+        <summary><span>Spørgsmål 1 – Projekt 3: DOM, events og data-persistens</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Spillet opdaterer UI dynamisk via DOM (score, targets, state).</li>
+            <li>Events: klik/keydown + timers (<code>setInterval</code>/<code>setTimeout</code>).</li>
+            <li>Persistens: highscore gemmes i <code>localStorage</code>.</li>
+          </ul>
+
+          <div class="callout"><strong>Åbn og vis i projektet:</strong> <code>script.js</code> (event listeners, score, localStorage).</div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set6-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set6-q1">const scoreEl = document.getElementById("score");
+scoreEl.textContent = points;
+
+gameArea.addEventListener("click", hitTarget);
+
+let best = Number(localStorage.getItem("bestScore")) || 0;
+if (points &gt; best) localStorage.setItem("bestScore", points);</code></pre>
+          </div>
+        </div>
       </details>
 
       <details id="set-6-q2" class="q" open>
@@ -735,9 +828,9 @@ p {}
               <button class="copy" type="button" data-copy="#code-set6-q4">Kopiér</button>
             </div>
             <pre><code id="code-set6-q4">const obj = { score: 10 };
-const json = JSON.stringify(obj);   // serialize (obj -&gt; string)
+const json = JSON.stringify(obj);   // serialize (obj -> string)
 
-const data = JSON.parse(json);      // deserialize (string -&gt; obj)</code></pre>
+const data = JSON.parse(json);      // deserialize (string -> obj)</code></pre>
           </div>
         </div>
       </details>
@@ -745,7 +838,7 @@ const data = JSON.parse(json);      // deserialize (string -&gt; obj)</code></pr
       <a class="to-top" href="#content">↑ Til toppen</a>
     </section>
 
-    <!-- SET 7 -->
+    <!-- ===================== SET 7 ===================== -->
     <section id="set-7" class="set" data-set="7">
       <div class="set-head">
         <h2>Sæt 7</h2>
@@ -757,9 +850,50 @@ const data = JSON.parse(json);      // deserialize (string -&gt; obj)</code></pr
         </div>
       </div>
 
+      <!-- Q1 (Projekt 1) -->
       <details id="set-7-q1" class="q q1" open>
-        <summary><span>Spørgsmål 1 – (genbrug) Projekt 1: Responsivt design</span></summary>
-        <div class="q-body"><p>Samme som Sæt 1, Spg. 1.</p></div>
+        <summary><span>Spørgsmål 1 – Projekt 1: Responsivt design (Flexbox, Grid, media queries)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Projekt 1 er et CV-website bygget responsivt.</li>
+            <li>Overordnet layout laves med <strong>CSS Grid</strong> (2D layout).</li>
+            <li>Komponenter (nav, små sektioner) laves med <strong>Flexbox</strong> (1D layout).</li>
+            <li><strong>Media queries</strong> skifter layout ved breakpoints (kolonner → én kolonne på mobil).</li>
+            <li>Ingen horisontal scrolling på mobil.</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Åbn og vis i projektet:</strong> <code>index.html</code> + <code>style.css</code> (eller tilsvarende) → peg på Grid/Flex og breakpoint.
+          </div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempel (CSS)</span>
+              <button class="copy" type="button" data-copy="#code-set7-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set7-q1">/* Grid til side-layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+/* Flexbox til navigation */
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Media query til mobil */
+@media (max-width: 768px) {
+  .container { grid-template-columns: 1fr; }
+  nav ul { flex-direction: column; }
+}
+
+/* Fleksible billeder */
+img { max-width: 100%; height: auto; }</code></pre>
+          </div>
+        </div>
       </details>
 
       <details id="set-7-q2" class="q" open>
@@ -789,6 +923,7 @@ input:checked + label { font-weight: bold; }</code></pre>
           <ul class="bullets">
             <li>HTML5 validering med <code>required</code>, input-typer, <code>min/max</code>, <code>pattern</code>.</li>
             <li>Browseren viser automatisk fejl ved submit.</li>
+            <li>JS bruges når regler er mere komplekse eller du vil have bedre feedback.</li>
           </ul>
 
           <div class="codeblock">
@@ -816,7 +951,7 @@ input:checked + label { font-weight: bold; }</code></pre>
         <div class="q-body">
           <ul class="bullets">
             <li>Fetch kaster typisk kun fejl ved netværksfejl – ikke automatisk ved 404/500.</li>
-            <li>Derfor: tjek <code>response.ok</code> og kast fejl selv.</li>
+            <li>Tjek <code>response.ok</code> og kast fejl selv.</li>
           </ul>
 
           <div class="codeblock">
@@ -838,7 +973,7 @@ input:checked + label { font-weight: bold; }</code></pre>
       <a class="to-top" href="#content">↑ Til toppen</a>
     </section>
 
-    <!-- SET 8 -->
+    <!-- ===================== SET 8 ===================== -->
     <section id="set-8" class="set" data-set="8">
       <div class="set-head">
         <h2>Sæt 8</h2>
@@ -850,9 +985,35 @@ input:checked + label { font-weight: bold; }</code></pre>
         </div>
       </div>
 
+      <!-- Q1 (Projekt 2) -->
       <details id="set-8-q1" class="q q1" open>
-        <summary><span>Spørgsmål 1 – (genbrug) Projekt 2: Form + validering + usability</span></summary>
-        <div class="q-body"><p>Samme som Sæt 2, Spg. 1.</p></div>
+        <summary><span>Spørgsmål 1 – Projekt 2: Formulardesign, validering og usability</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Formular med logisk gruppering, tydelige labels og forudsigeligt flow.</li>
+            <li>Validering: HTML5 først (<code>required</code>, <code>type</code>, <code>minlength</code>, <code>pattern</code>).</li>
+            <li>JS til ekstra kontrol + bedre feedback (live validering / custom beskeder).</li>
+            <li>Usability: synlig fokus, klare fejltekster, mobilvenligt, nem rettelse.</li>
+          </ul>
+
+          <div class="callout"><strong>Åbn og vis i projektet:</strong> <code>index.html</code> (form), <code>script.js</code> (validering), <code>style.css</code> (layout/fokus).</div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Validering (JS)</span>
+              <button class="copy" type="button" data-copy="#code-set8-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set8-q1">const email = document.getElementById("email");
+
+email.addEventListener("input", () =&gt; {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("Indtast en gyldig email");
+  } else {
+    email.setCustomValidity("");
+  }
+});</code></pre>
+          </div>
+        </div>
       </details>
 
       <details id="set-8-q2" class="q" open>
@@ -910,6 +1071,7 @@ input:checked + label { font-weight: bold; }</code></pre>
           <ul class="bullets">
             <li>Declaration hoistes (kan bruges før den er defineret).</li>
             <li>Expression er en værdi (ikke hoistet på samme måde).</li>
+            <li>Arrow functions bruges ofte i callbacks.</li>
           </ul>
 
           <div class="codeblock">
@@ -927,7 +1089,7 @@ const greet2 = function () {
   console.log("Hej");
 };
 
-// Expression (arrow) - typisk i callbacks:
+// Arrow (typisk i callbacks)
 button.addEventListener("click", () =&gt; console.log("klik"));</code></pre>
           </div>
         </div>
@@ -936,7 +1098,7 @@ button.addEventListener("click", () =&gt; console.log("klik"));</code></pre>
       <a class="to-top" href="#content">↑ Til toppen</a>
     </section>
 
-    <!-- SET 9 -->
+    <!-- ===================== SET 9 ===================== -->
     <section id="set-9" class="set" data-set="9">
       <div class="set-head">
         <h2>Sæt 9</h2>
@@ -948,9 +1110,32 @@ button.addEventListener("click", () =&gt; console.log("klik"));</code></pre>
         </div>
       </div>
 
+      <!-- Q1 (Projekt 3) -->
       <details id="set-9-q1" class="q q1" open>
-        <summary><span>Spørgsmål 1 – (genbrug) Projekt 3: DOM + events + persistens</span></summary>
-        <div class="q-body"><p>Samme som Sæt 3, Spg. 1.</p></div>
+        <summary><span>Spørgsmål 1 – Projekt 3: DOM, events og data-persistens</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Spillet opdaterer UI dynamisk via DOM (score, targets, state).</li>
+            <li>Events: klik/keydown + timers (<code>setInterval</code>/<code>setTimeout</code>).</li>
+            <li>Persistens: highscore gemmes i <code>localStorage</code>.</li>
+          </ul>
+
+          <div class="callout"><strong>Åbn og vis i projektet:</strong> <code>script.js</code> (event listeners, score, localStorage).</div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set9-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set9-q1">const scoreEl = document.getElementById("score");
+scoreEl.textContent = points;
+
+gameArea.addEventListener("click", hitTarget);
+
+let best = Number(localStorage.getItem("bestScore")) || 0;
+if (points &gt; best) localStorage.setItem("bestScore", points);</code></pre>
+          </div>
+        </div>
       </details>
 
       <details id="set-9-q2" class="q" open>
@@ -1025,7 +1210,7 @@ fetch("/api", {
       <a class="to-top" href="#content">↑ Til toppen</a>
     </section>
 
-    <!-- SET 10 -->
+    <!-- ===================== SET 10 ===================== -->
     <section id="set-10" class="set" data-set="10">
       <div class="set-head">
         <h2>Sæt 10</h2>
@@ -1037,9 +1222,50 @@ fetch("/api", {
         </div>
       </div>
 
+      <!-- Q1 (Projekt 1) -->
       <details id="set-10-q1" class="q q1" open>
-        <summary><span>Spørgsmål 1 – (genbrug) Projekt 1: Responsivt design</span></summary>
-        <div class="q-body"><p>Samme som Sæt 1, Spg. 1.</p></div>
+        <summary><span>Spørgsmål 1 – Projekt 1: Responsivt design (Flexbox, Grid, media queries)</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Projekt 1 er et CV-website bygget responsivt.</li>
+            <li>Overordnet layout laves med <strong>CSS Grid</strong> (2D layout).</li>
+            <li>Komponenter (nav, små sektioner) laves med <strong>Flexbox</strong> (1D layout).</li>
+            <li><strong>Media queries</strong> skifter layout ved breakpoints (kolonner → én kolonne på mobil).</li>
+            <li>Ingen horisontal scrolling på mobil.</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Åbn og vis i projektet:</strong> <code>index.html</code> + <code>style.css</code> (eller tilsvarende) → peg på Grid/Flex og breakpoint.
+          </div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempel (CSS)</span>
+              <button class="copy" type="button" data-copy="#code-set10-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set10-q1">/* Grid til side-layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+/* Flexbox til navigation */
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Media query til mobil */
+@media (max-width: 768px) {
+  .container { grid-template-columns: 1fr; }
+  nav ul { flex-direction: column; }
+}
+
+/* Fleksible billeder */
+img { max-width: 100%; height: auto; }</code></pre>
+          </div>
+        </div>
       </details>
 
       <details id="set-10-q2" class="q" open>
@@ -1118,7 +1344,7 @@ clearInterval(id);</code></pre>
       <a class="to-top" href="#content">↑ Til toppen</a>
     </section>
 
-    <!-- SET 11 -->
+    <!-- ===================== SET 11 ===================== -->
     <section id="set-11" class="set" data-set="11">
       <div class="set-head">
         <h2>Sæt 11</h2>
@@ -1130,9 +1356,35 @@ clearInterval(id);</code></pre>
         </div>
       </div>
 
+      <!-- Q1 (Projekt 2) -->
       <details id="set-11-q1" class="q q1" open>
-        <summary><span>Spørgsmål 1 – (genbrug) Projekt 2: Form + validering + usability</span></summary>
-        <div class="q-body"><p>Samme som Sæt 2, Spg. 1.</p></div>
+        <summary><span>Spørgsmål 1 – Projekt 2: Formulardesign, validering og usability</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Formular med logisk gruppering, tydelige labels og forudsigeligt flow.</li>
+            <li>Validering: HTML5 først (<code>required</code>, <code>type</code>, <code>minlength</code>, <code>pattern</code>).</li>
+            <li>JS til ekstra kontrol + bedre feedback (live validering / custom beskeder).</li>
+            <li>Usability: synlig fokus, klare fejltekster, mobilvenligt, nem rettelse.</li>
+          </ul>
+
+          <div class="callout"><strong>Åbn og vis i projektet:</strong> <code>index.html</code> (form), <code>script.js</code> (validering), <code>style.css</code> (layout/fokus).</div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Validering (JS)</span>
+              <button class="copy" type="button" data-copy="#code-set11-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set11-q1">const email = document.getElementById("email");
+
+email.addEventListener("input", () =&gt; {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("Indtast en gyldig email");
+  } else {
+    email.setCustomValidity("");
+  }
+});</code></pre>
+          </div>
+        </div>
       </details>
 
       <details id="set-11-q2" class="q" open>
@@ -1217,7 +1469,7 @@ const obj = JSON.parse(json);</code></pre>
       <a class="to-top" href="#content">↑ Til toppen</a>
     </section>
 
-    <!-- SET 12 -->
+    <!-- ===================== SET 12 ===================== -->
     <section id="set-12" class="set" data-set="12">
       <div class="set-head">
         <h2>Sæt 12</h2>
@@ -1229,9 +1481,32 @@ const obj = JSON.parse(json);</code></pre>
         </div>
       </div>
 
+      <!-- Q1 (Projekt 3) -->
       <details id="set-12-q1" class="q q1" open>
-        <summary><span>Spørgsmål 1 – (genbrug) Projekt 3: DOM + events + persistens</span></summary>
-        <div class="q-body"><p>Samme som Sæt 3, Spg. 1.</p></div>
+        <summary><span>Spørgsmål 1 – Projekt 3: DOM, events og data-persistens</span></summary>
+        <div class="q-body">
+          <ul class="bullets">
+            <li>Spillet opdaterer UI dynamisk via DOM (score, targets, state).</li>
+            <li>Events: klik/keydown + timers (<code>setInterval</code>/<code>setTimeout</code>).</li>
+            <li>Persistens: highscore gemmes i <code>localStorage</code>.</li>
+          </ul>
+
+          <div class="callout"><strong>Åbn og vis i projektet:</strong> <code>script.js</code> (event listeners, score, localStorage).</div>
+
+          <div class="codeblock">
+            <div class="codebar">
+              <span>Eksempler</span>
+              <button class="copy" type="button" data-copy="#code-set12-q1">Kopiér</button>
+            </div>
+            <pre><code id="code-set12-q1">const scoreEl = document.getElementById("score");
+scoreEl.textContent = points;
+
+gameArea.addEventListener("click", hitTarget);
+
+let best = Number(localStorage.getItem("bestScore")) || 0;
+if (points &gt; best) localStorage.setItem("bestScore", points);</code></pre>
+          </div>
+        </div>
       </details>
 
       <details id="set-12-q2" class="q" open>
@@ -1308,7 +1583,7 @@ const n = Number("42");</code></pre>
     </section>
 
     <footer class="footer">
-      <p>Bygget som statisk site til GitHub Pages. Du kan redigere teksten direkte i <code>index.html</code>.</p>
+      <p>Statisk site til GitHub Pages. Tip: brug A-/A+ hvis tekst er for lille/stor.</p>
     </footer>
   </main>
 

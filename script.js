@@ -5,6 +5,25 @@
   const toggleQ1 = document.getElementById('toggleQ1');
   const expandCurrent = document.getElementById('expandCurrent');
 
+  const fontDown = document.getElementById('fontDown');
+  const fontUp = document.getElementById('fontUp');
+
+  // Font size (persist)
+  const KEY = 'web1_font_px';
+  const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+  function getFontPx(){
+    const saved = Number(localStorage.getItem(KEY));
+    return saved && !Number.isNaN(saved) ? saved : 18;
+  }
+  function setFontPx(px){
+    const v = clamp(px, 16, 28);
+    document.documentElement.style.setProperty('--base-font', v + 'px');
+    localStorage.setItem(KEY, String(v));
+  }
+  setFontPx(getFontPx());
+  fontDown && fontDown.addEventListener('click', () => setFontPx(getFontPx() - 1));
+  fontUp && fontUp.addEventListener('click', () => setFontPx(getFontPx() + 1));
+
   let currentSetEl = sets[0];
 
   function setActiveLink(setId){
@@ -37,11 +56,10 @@
       currentSetEl = target;
       setActiveLink(targetId);
 
-      // Make it fast during exam: collapse other sets, open this one
+      // Exam-speed: collapse other sets, open this one
       closeAllExcept(target);
       openAllInSet(target);
 
-      // Focus main content for keyboard users
       const content = document.getElementById('content');
       content && content.focus({ preventScroll: true });
     });
@@ -75,7 +93,6 @@
       btn.textContent = 'Kopieret!';
       setTimeout(() => btn.textContent = old, 900);
     }catch{
-      // fallback: select text
       const range = document.createRange();
       range.selectNodeContents(el);
       const selObj = window.getSelection();
